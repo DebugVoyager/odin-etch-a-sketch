@@ -31,8 +31,13 @@ function renderGrid(gridCountTotal) {
     }
 
     for (let child of divContainer.children) {
+        let opacity = 0.1
         child.setAttribute('class', 'grid')
-        child.addEventListener('mouseover', (e) => child.style.backgroundColor = `rgb(${getRandomRGB()}, ${getRandomRGB()}, ${getRandomRGB()})`)
+        child.addEventListener('mouseover', (e) => {
+            child.style.backgroundColor = `rgb(${getRandomRGB()}, ${getRandomRGB()}, ${getRandomRGB()})`
+            child.style.opacity = `${opacity}`
+            if (opacity <= 1) opacity += 0.1
+        })
     }
 }
 
